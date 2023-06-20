@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -60,5 +62,51 @@ public class Main {
             }
             System.out.println();
         }
+
+        System.out.println();
+
+        //CtoF.main(args);
+
+        //EC
+        for (int i = 1; i <= 3; i++){
+            System.out.print("\t");
+            for (int z = 1; z <= 18; z ++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for (int i = 1; i <= 6; i++){
+            System.out.print("\t       ");
+            for (int z = 1; z <= 3; z ++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        System.out.println("****     ****");
+        System.out.println(" ***********");
+    }
+}
+
+class CtoF {
+    public static void main(String[] args) {
+        double CelsiusTemp;
+        double FahrenheitTemp;
+        boolean done = false;
+        String trash;
+        Scanner in = new Scanner(System.in);
+        do {
+            System.out.print("Enter the temperature you wish to convert from Celsius to Fahrenheit: ");
+            if (in.hasNextDouble()){
+                done = true;
+                CelsiusTemp = in.nextDouble();
+                FahrenheitTemp = CelsiusTemp * 1.8 + 32;
+                System.out.println(CelsiusTemp + " degrees in Celsius is equal to " + FahrenheitTemp + " degrees Fahrenheit.");
+            }
+            else {
+                trash = in.nextLine();
+                System.out.println("Enter a valid temperature, not " + trash + ".");
+            }
+        }while (!done);
     }
 }
